@@ -26,7 +26,7 @@ class hill : public point {
 private:
     double sig_x, sig_y; //x, y - variance
     double var;
-    string func;
+    string func = "splot ";
 public:
     hill(double xx = 0, double yy = 0, double zz = 0, double sig_xx = 0.5, double sig_yy = 0.5, double alpha = 0);
 };
