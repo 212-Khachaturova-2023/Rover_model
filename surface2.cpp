@@ -26,34 +26,34 @@ class hill : public point {
 private:
     double sig_x, sig_y; //x, y - variance
     double var;
-    string func = "splot ";
+    string func;
 public:
-    hill(double xx = 0, double yy = 0, double zz = 0, double sig_xx = 0.5, double sig_yy = 0.5, double alpha = 0);
+    hill(double xx = 0, double yy = 0, double zz = 0, double sig_xx = 0.5, double sig_yy = 0.5, double alpha = 1);
 };
 
 hill::hill(double xx, double yy, double zz, double sig_xx, double sig_yy, double alpha) {
     x = xx, y = yy, z = zz;
     sig_x = sig_xx;
     sig_y = sig_yy;
-    func = "(" + to_string(z) + "*" + "exp(" + "(-1)*((x-(" + to_string(x) + "))**2" + "/" + to_string(sig_x) + " + " + "((y-(" + to_string(y) + "))**2)" + "/" + to_string(sig_y) + ")))";
+    var = alpha;
+    func = to_string(z) + "* exp((-1) * (((-sin(" + to_string(var) + ") * (x - (" + to_string(x) + ")) + cos(" + to_string(var) + ") * (y - (" + to_string(y) + ")))**2) / " + to_string(sig_x) + " + ((cos(" + to_string(var) + ") * (x - (" + to_string(x) + ")) + sin(" + to_string(var) + ") * (y - (" + to_string(y) + ")))**2) / " + to_string(sig_y) + ")) ";
 }
 
 class surface {
 private:
     double dim_x = 25.0, dim_y = 25.0;
-    double variance = 0.5;
 
     hill* points[NUM];
 public:
-    surface(ofstream & file, double length = 25.0, double width = 25.0, double var = 0.5);
+    surface(ofstream & file, double length = 25.0, double width = 25.0);
     double h(double x, double y);
     void print_file(ofstream& file);
 };
 
-surface::surface(ofstream & file, double length, double width, double var) {
+surface::surface(ofstream & file, double length, double width) {
     double dim_x = length;
     double dim_y = width;
-    int variance = var;
+    file << "splot" << " ";
     for (int i = 0; i < NUM; i++) {
         double x0 = rand() / double(RAND_MAX) * dim_x - dim_x / 2;
         double y0 = rand() / double(RAND_MAX) * dim_y - dim_y / 2;
@@ -69,7 +69,11 @@ surface::surface(ofstream & file, double length, double width, double var) {
         //adding raandomly generated points to the array with objects from class hill
         points[i] = new hill(x0, y0, z0, sig_x0, sig_y0, var_0); 
 
-        file << points[i]->func << " + ";
+        if (i < NUM - 1) {
+            file << points[i]->func << " + ";
+        } else {
+            file << points[i]->func;
+        }
     }
 }
 
@@ -77,6 +81,6 @@ int main() {
     srand(time(NULL));
     ofstream file_surf;
     file_surf.open("func_s.txt");
-    surface off_road(file_surf, 25, 25, 25); //creating new object a in class surface
+    surface off_road(file_surf, 25, 25); //creating new object a in class surface
     return 0;
 }
