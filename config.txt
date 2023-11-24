@@ -1,0 +1,12 @@
+print date = YES;
+log file name = "Log_boundary.txt";
+Hills = 5; 
+Stones = 3;
+Beams = 1;
+Create surface A: length = 100, width = 100, unevenness_degree = 20;
+Create hill(10, 34.67, 23.6, 1);
+Set cursor = (5, 10);
+Create stone(2);
+Set cursor = (24, 5);
+Create beam(12, 12, 30, 82, 2.2);
+Count surface; 
