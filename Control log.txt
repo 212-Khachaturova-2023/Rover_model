@@ -1,0 +1,10 @@
+Number of random hummocks was setted Fri Dec 15 01:45:46 2023
+Number of random stones was setted Fri Dec 15 01:45:46 2023
+Number of random logs was setted Fri Dec 15 01:45:46 2023
+Surface was generated: length - 100.000000, width - 100.000000, unevennes degree - 15.000000 Fri Dec 15 01:45:46 2023
+Cursor was located Fri Dec 15 01:45:46 2023
+Cursor was located Fri Dec 15 01:45:46 2023
+Stone was created Fri Dec 15 01:45:46 2023
+Cursor was located Fri Dec 15 01:45:46 2023
+Log was created Fri Dec 15 01:45:46 2023
+Surface was counted Fri Dec 15 01:46:12 2023

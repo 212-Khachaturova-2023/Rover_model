@@ -1,0 +1,9 @@
+Random hills = 15; 
+Random stones = 0;
+Random beams = 0;
+Create surface A: length = 100, width = 100, unevenness_degree = 15;
+Set cursor = (13, 10);
+Create stone(1);
+Set cursor = (46, 27);
+Create beam(65, 65, 30, 40, 2.1);
+Count surface; 
