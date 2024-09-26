@@ -1,0 +1,11 @@
+Number of hills was set Thu Oct 12 20:15:21 2023
+Number of stones was set Thu Oct 12 20:15:21 2023
+Number of beams was set Thu Oct 12 20:15:21 2023
+Surface was generated: length - 100, width - 100, unevennes degree - 20Thu Oct 12 20:15:21 2023
+Cursor was set Thu Oct 12 20:15:21 2023
+Hill was created Thu Oct 12 20:15:21 2023
+Cursor was set Thu Oct 12 20:15:21 2023
+Stone was created Thu Oct 12 20:15:21 2023
+Cursor was set Thu Oct 12 20:15:21 2023
+Log was created Thu Oct 12 20:15:21 2023
+Surface was countedThu Oct 12 20:15:23 2023
